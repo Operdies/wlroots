@@ -179,6 +179,7 @@ struct wlr_scene_buffer {
 	struct wlr_scene_output *primary_output;
 
 	float opacity;
+	float opacity_override;
 	enum wlr_scale_filter_mode filter_mode;
 	struct wlr_fbox src_box;
 	int dst_width, dst_height;

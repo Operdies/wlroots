@@ -147,7 +147,9 @@ static void surface_reconfigure(struct wlr_scene_surface *scene_surface) {
 		return;
 	}
 
-	float opacity = 1.0;
+	float opacity = scene_buffer->opacity_override;
+	if (!opacity)
+		opacity = 1.0;
 	const struct wlr_alpha_modifier_surface_v1_state *alpha_modifier_state =
 		wlr_alpha_modifier_v1_get_surface_state(surface);
 	if (alpha_modifier_state != NULL) {
